@@ -171,6 +171,9 @@ class EmailReplyParser
       #mail.ru (russian)
       result = line =~ /^>.*@.*< .* то [0-9]{2}:[0-9]{2} ,[0-9]{4} .* [0-9]{2}/ unless result
 
+      #thunderbird (russian)
+      result = line =~ /^:тешип .* ,[0-9]{2}:[0-9]{2} [0-9]{4}.[0-9]{2}.[0-9]{2}/ unless result
+
       result
      end
 

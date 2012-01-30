@@ -1,0 +1,43 @@
+Delivered-To: icfdev.ru@gmail.com
+Received: by 10.152.112.10 with SMTP id im10cs32551lab;
+        Fri, 27 Jan 2012 00:21:26 -0800 (PST)
+Received: by 10.204.200.197 with SMTP id ex5mr2500249bkb.128.1327652485978;
+        Fri, 27 Jan 2012 00:21:25 -0800 (PST)
+Return-Path: <unlovedru@mail.ru>
+Received: from smtp24.mail.ru (smtp24.mail.ru. [94.100.176.177])
+        by mx.google.com with ESMTPS id uq8si3687829bkb.82.2012.01.27.00.21.25
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Fri, 27 Jan 2012 00:21:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of unlovedru@mail.ru designates 94.100.176.177 as permitted sender) client-ip=94.100.176.177;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of unlovedru@mail.ru designates 94.100.176.177 as permitted sender) smtp.mail=unlovedru@mail.ru; dkim=pass header.i=@mail.ru
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mail.ru; s=mail;
+	h=Content-Transfer-Encoding:Content-Type:In-Reply-To:References:Subject:To:MIME-Version:From:Date:Message-ID; bh=RwqeFQAyWdAaPuekMEGaEQv+xBdzkG2aEi/EhgXY/p8=;
+	b=aURB2e3cJRD8rxrWvLwG2HAlojD4u5032dRNqR17gcR0DptddWYfjgrW+gu04HogB6KCLNTqMt9W/b8I8GIiwGF2U20rsVK4RlrPe00Layl8+ttRxQyvqS1unL2GhI9A;
+Received: from [94.232.57.6] (port=39010 helo=[192.168.0.11])
+	by smtp24.mail.ru with esmtpa (envelope-from <unlovedru@mail.ru>)
+	id 1Rqh3k-0003tY-Tq
+	for icfdev.ru@gmail.com; Fri, 27 Jan 2012 12:21:25 +0400
+Message-ID: <4F225E84.6080202@mail.ru>
+Date: Fri, 27 Jan 2012 12:21:24 +0400
+From: "unlovedru@mail.ru" <unlovedru@mail.ru>
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:9.0) Gecko/20111229 Thunderbird/9.0
+MIME-Version: 1.0
+To: =?UTF-8?B?0JDRgNGC0YPRgCDQn9C40YDQsNC20LrQvtCy?=
+ <icfdev.ru@gmail.com>
+Subject: Re: test subject
+References: <CA+is=NjGHot1yBw3paHzxX1J=UqjqZLaoxzRRVgC_U3nbzDPzQ@mail.gmail.com>
+In-Reply-To: <CA+is=NjGHot1yBw3paHzxX1J=UqjqZLaoxzRRVgC_U3nbzDPzQ@mail.gmail.com>
+Content-Type: text/plain; charset=UTF-8; format=flowed
+Content-Transfer-Encoding: 8bit
+X-Mru-NR: 1
+X-Mru-UID: 433983806
+X-Mru-IsAutoreg: 0
+X-Mru-AutoregInfo: 9117963, []
+X-Spam: Not detected
+X-Mras: Ok
+X-Mru-Karma: 2
+
+27.01.2012 12:00, Артур Пиражков пишет:
+> test server message 
+test answer
+

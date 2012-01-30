@@ -79,7 +79,7 @@ I am currently using the Java HTTP API.\n", reply.fragments[0].to_s
   end
 
   def test_custom_email_clients
-    email_clients=['gmail','mailru']
+    email_clients=['gmail','mailru', 'thunderbird']
     email_clients.each do |client|
       mail = Mail.new(IO.read EMAIL_FIXTURE_PATH.join("email_#{client}.txt"))
       parser = EmailReplyParser.parse(mail)
