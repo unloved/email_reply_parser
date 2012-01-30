@@ -2,6 +2,7 @@ require 'rubygems'
 require 'test/unit'
 require 'pathname'
 require 'pp'
+require 'mail'
 
 dir = Pathname.new File.expand_path(File.dirname(__FILE__))
 require dir + '..' + 'lib' + 'email_reply_parser'
@@ -75,6 +76,18 @@ I am currently using the Java HTTP API.\n", reply.fragments[0].to_s
     original = "The Quick Brown Fox Jumps Over The Lazy Dog"
     EmailReplyParser.read original
     assert_equal "The Quick Brown Fox Jumps Over The Lazy Dog", original
+  end
+
+  def test_custom_email_clients
+    email_clients=['gmail']
+    email_clients.each do |client|
+      mail = Mail.new(IO.read EMAIL_FIXTURE_PATH.join("email_#{client}.txt"))
+      parser = EmailReplyParser.parse(mail)
+      assert parser.fragments.count > 1
+      assert_equal 1, parser.fragments.find_all{|f| !f.hidden? and !f.signature? and !f.quoted?}.count
+      assert_equal 'test answer', parser.get_reply
+    end
+
   end
 
   def email(name)

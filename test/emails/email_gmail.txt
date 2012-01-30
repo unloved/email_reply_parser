@@ -1,0 +1,53 @@
+Delivered-To: icfdev.ru@gmail.com
+Received: by 10.152.112.10 with SMTP id im10cs32446lab;
+        Fri, 27 Jan 2012 00:14:42 -0800 (PST)
+Return-Path: <unlovedru@gmail.com>
+Received-SPF: pass (google.com: domain of unlovedru@gmail.com designates 10.181.13.113 as permitted sender) client-ip=10.181.13.113;
+Authentication-Results: mr.google.com; spf=pass (google.com: domain of unlovedru@gmail.com designates 10.181.13.113 as permitted sender) smtp.mail=unlovedru@gmail.com; dkim=pass header.i=unlovedru@gmail.com
+Received: from mr.google.com ([10.181.13.113])
+        by 10.181.13.113 with SMTP id ex17mr9168593wid.15.1327652081950 (num_hops = 1);
+        Fri, 27 Jan 2012 00:14:41 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        bh=QPls+CPRx0V06JlhhiofP8ry0rjsH38hhkCeEyIv3QE=;
+        b=Vu32pQX4PfHrgMkR17ZB7SpiDp71iWt07J65VYVQTzyN+aHsqCX/JWM9sdBK6WP6/d
+         qNplX5syEGzYj/1QEHk8RLhG5DZZUP1hdZD4eZcJbjQefgUsUWEvT/tKkVDQz2TIsmUL
+         47okI5vAgmh3W+LsPNVSmzx1ysJpzWl6UXZ4U=
+MIME-Version: 1.0
+Received: by 10.181.13.113 with SMTP id ex17mr9168593wid.15.1327652081948;
+ Fri, 27 Jan 2012 00:14:41 -0800 (PST)
+Received: by 10.180.86.198 with HTTP; Fri, 27 Jan 2012 00:14:41 -0800 (PST)
+In-Reply-To: <CA+is=NiRD=Tp5pY3V6H0rZKoovxsEimz3-a3ic3UyXfsT37ZoA@mail.gmail.com>
+References: <CA+is=NiRD=Tp5pY3V6H0rZKoovxsEimz3-a3ic3UyXfsT37ZoA@mail.gmail.com>
+Date: Fri, 27 Jan 2012 11:14:41 +0300
+Message-ID: <CACRE=f2ix+LTCHVDOJH0sU_O3n88YTe4hF2-5an31=jvnDCQxw@mail.gmail.com>
+Subject: Re: test subject
+From: =?KOI8-R?B?7M/H1c7P1yDhzMXL08HOxNI=?= <unlovedru@gmail.com>
+To: =?KOI8-R?B?4dLU1dIg8MnSwdbLz9c=?= <icfdev.ru@gmail.com>
+Content-Type: multipart/alternative; boundary=f46d043c7f0cbad61a04b77e16fb
+
+--f46d043c7f0cbad61a04b77e16fb
+Content-Type: text/plain; charset=KOI8-R
+Content-Transfer-Encoding: base64
+
+dGVzdCBhbnN3ZXIKCjI3INHO18HS0SAyMDEyIMcuIDEyOjAxINDPzNjaz9fB1MXM2CDh0tTV0iDw
+ydLB1svP1wo8aWNmZGV2LnJ1QGdtYWlsLmNvbT7OwdDJ08HMOgoKPiB0ZXN0IHNlcnZlciBtZXNz
+YWdlCg==
+--f46d043c7f0cbad61a04b77e16fb
+Content-Type: text/html; charset=KOI8-R
+Content-Transfer-Encoding: quoted-printable
+
+test answer<br><br><div class=3D"gmail_quote">27 =D1=CE=D7=C1=D2=D1 2012=9A=
+=C7. 12:01 =D0=CF=CC=D8=DA=CF=D7=C1=D4=C5=CC=D8 =E1=D2=D4=D5=D2 =F0=C9=D2=
+=C1=D6=CB=CF=D7 <span dir=3D"ltr">&lt;<a href=3D"mailto:icfdev.ru@gmail.com=
+">icfdev.ru@gmail.com</a>&gt;</span> =CE=C1=D0=C9=D3=C1=CC:<br><blockquote =
+class=3D"gmail_quote" style=3D"margin:0 0 0 .8ex;border-left:1px #ccc solid=
+;padding-left:1ex">
+test server message
+
+</blockquote></div><br>
+
+--f46d043c7f0cbad61a04b77e16fb--
+

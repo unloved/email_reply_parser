@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'strscan'
 
 # EmailReplyParser is a small library to parse plain text email content.  The
@@ -41,6 +42,11 @@ class EmailReplyParser
     Email.new.read(text)
   end
 
+  def self.parse(mail)
+    body_from = mail.text_part|| mail
+    Email.new.read(body_from.body.to_s.force_encoding(body_from.charset).encode('utf-8'))
+  end
+
   ### Emails
 
   # An Email instance represents a parsed body String.
@@ -50,6 +56,10 @@ class EmailReplyParser
 
     def initialize
       @fragments = []
+    end
+
+    def get_reply
+      @fragments.find_all{|f| !f.quoted? and !f.signature? and !f.hidden?}.map{|f| f.to_s.chomp}.join("\n")
     end
 
     # Splits the given text into a list of Fragments.  This is roughly done by
@@ -146,8 +156,15 @@ class EmailReplyParser
     #
     # Returns true if the line is a valid header, or false.
     def quote_header?(line)
-      line =~ /^:etorw.*nO$/
-    end
+      result = false
+      result = line =~ /^:etorw.*nO$/ unless result
+
+      #gmail (russian)
+      result = line =~ /^:ласипан>.*@.*</ unless result
+      result = line =~ /^*[0-9]{2}:[0-9]{2}.*[0-9]{4} .* [0-9]{2}/ unless result
+
+      result
+     end
 
     # Builds the fragment string and reverses it, after all lines have been
     # added.  It also checks to see if this Fragment is hidden.  The hidden
