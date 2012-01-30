@@ -134,6 +134,11 @@ class EmailReplyParser
         end
       end
 
+      if @fragment &&
+          (!@fragment.quoted? && (quote_header?(line)))
+          @fragment.quoted = true
+      end
+
       # If the line matches the current fragment, add it.  Note that a common
       # reply header also counts as part of the quoted Fragment, even though
       # it doesn't start with `>`.
@@ -162,6 +167,9 @@ class EmailReplyParser
       #gmail (russian)
       result = line =~ /^:ласипан>.*@.*</ unless result
       result = line =~ /^*[0-9]{2}:[0-9]{2}.*[0-9]{4} .* [0-9]{2}/ unless result
+
+      #mail.ru (russian)
+      result = line =~ /^>.*@.*< .* то [0-9]{2}:[0-9]{2} ,[0-9]{4} .* [0-9]{2}/ unless result
 
       result
      end

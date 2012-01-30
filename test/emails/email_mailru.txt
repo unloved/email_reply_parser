@@ -1,0 +1,70 @@
+Delivered-To: icfdev.ru@gmail.com
+Received: by 10.152.112.10 with SMTP id im10cs32316lab;
+        Fri, 27 Jan 2012 00:02:00 -0800 (PST)
+Received: by 10.204.151.77 with SMTP id b13mr2613724bkw.57.1327651320506;
+        Fri, 27 Jan 2012 00:02:00 -0800 (PST)
+Return-Path: <unlovedru@mail.ru>
+Received: from f40.mail.ru (f40.mail.ru. [217.69.128.62])
+        by mx.google.com with ESMTPS id v15si3669973bkd.13.2012.01.27.00.02.00
+        (version=TLSv1/SSLv3 cipher=OTHER);
+        Fri, 27 Jan 2012 00:02:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of unlovedru@mail.ru designates 217.69.128.62 as permitted sender) client-ip=217.69.128.62;
+Authentication-Results: mx.google.com; spf=pass (google.com: domain of unlovedru@mail.ru designates 217.69.128.62 as permitted sender) smtp.mail=unlovedru@mail.ru; dkim=pass header.i=@mail.ru
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=mail.ru; s=mail;
+	h=Message-Id:Content-Type:Reply-To:In-Reply-To:References:Date:Mime-Version:Subject:To:From; bh=GXsog2Ahk3FtWR3DVClt2E08MaNFYlwoCoRBMoomWmo=;
+	b=PqByk+TVkZ4kz1gGvZkDImBeRbLegWdewgtbIG+j6XOgBSHQfAH/4D/uBb8S+Gb6J1vz2PPcdsxuM+rTXZUeWVAkp+pgx74kFbFvr3nOLBEPkggOFIgJ7NHnK/aJiI16;
+Received: from mail by f40.mail.ru with local (envelope-from <unlovedru@mail.ru>)
+	id 1Rqgkx-0002Bu-OD
+	for icfdev.ru@gmail.com; Fri, 27 Jan 2012 12:01:59 +0400
+Received: from [94.232.57.6] by e.mail.ru with HTTP;
+	Fri, 27 Jan 2012 12:01:59 +0400
+From: =?UTF-8?B?0JLQsNGB0Y8g0J/Rg9C/0LrQuNC9?= <unlovedru@mail.ru>
+To: =?UTF-8?B?0JDRgNGC0YPRgCDQn9C40YDQsNC20LrQvtCy?= <icfdev.ru@gmail.com>
+Subject: =?UTF-8?B?UmU6IHRlc3Qgc3ViamVjdA==?=
+Mime-Version: 1.0
+X-Mailer: mPOP Web-Mail 2.19
+X-Originating-IP: [94.232.57.6]
+Date: Fri, 27 Jan 2012 12:01:59 +0400
+X-Mru-UID: 433983806
+X-Mru-IsAutoreg: 0
+X-Mru-AutoregInfo: 9117963, []
+X-Mru-User-Agent: Mozilla/5.0 (Ubuntu; X11; Linux i686; rv:9.0.1) Gecko/20100101 Firefox/9.0.1
+References: <CAis=NjGHot1yBw3paHzxX1J=UqjqZLaoxzRRVgC_U3nbzDPzQ@mail.gmail.com>
+X-Mru-Data: 1:1:1:140:140:0
+In-Reply-To: <CAis=NjGHot1yBw3paHzxX1J=UqjqZLaoxzRRVgC_U3nbzDPzQ@mail.gmail.com>
+Reply-To: =?UTF-8?B?0JLQsNGB0Y8g0J/Rg9C/0LrQuNC9?= <unlovedru@mail.ru>
+X-Priority: 
+Content-Type: multipart/alternative;
+	boundary="--ALT--Uq9MQHC21327651319"
+Message-Id: <E1Rqgkx-0002Bu-OD.unlovedru-mail-ru@f40.mail.ru>
+X-Spam: Not detected
+X-Mras: Ok
+X-Mru-Karma: 2
+
+
+----ALT--Uq9MQHC21327651319
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: base64
+
+dGVzdCBhbnN3ZXIKCgoyNyDRj9C90LLQsNGA0Y8gMjAxMiwgMTI6MDAg0L7RgiDQkNGA0YLRg9GA
+INCf0LjRgNCw0LbQutC+0LIgPGljZmRldi5ydUBnbWFpbC5jb20+OgogIAogIAp0ZXN0IHNlcnZl
+ciBtZXNzYWdlICAgCg==
+
+----ALT--Uq9MQHC21327651319
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: base64
+
+CjxIVE1MPjxCT0RZPnRlc3QgYW5zd2VyPGJyPjxicj48YnI+Mjcg0Y/QvdCy0LDRgNGPIDIwMTIs
+IDEyOjAwINC+0YIg0JDRgNGC0YPRgCDQn9C40YDQsNC20LrQvtCyICZsdDtpY2ZkZXYucnVAZ21h
+aWwuY29tJmd0Ozo8YnI+PGJsb2NrcXVvdGUgc3R5bGU9ImJvcmRlci1sZWZ0OjFweCBzb2xpZCAj
+MDg1N0E2OyBtYXJnaW46MTBweDsgcGFkZGluZzowIDAgMCAxMHB4OyIgY2xhc3M9Im1haWxydS1i
+bG9ja3F1b3RlIj48ZGl2IGlkPSJjbGFzc18xMzI3NjUxMjg5Ij48ZGl2IGNsYXNzPSJqcy1oZWxw
+ZXIiPgoJPHN0eWxlIHR5cGU9InRleHQvY3NzIj48L3N0eWxlPgoJPGRpdiBpZD0ic3R5bGVfMTMy
+NzY1MTIzNDAwMDAwMDAzNTgiIGNsYXNzPSJtcl9yZWFkX19ib2R5Ij4KCQk8YmFzZSB0YXJnZXQ9
+Il9zZWxmIiBocmVmPSIvL2UubWFpbC5ydS9jZ2ktYmluLyI+CgkJCgkJCTxkaXYgaWQ9InN0eWxl
+XzEzMjc2NTEyMzQwMDAwMDAwMzU4X0JPRFkiPnRlc3Qgc2VydmVyIG1lc3NhZ2UKCjwvZGl2PgoJ
+CQkKCQkKCQk8YmFzZSB0YXJnZXQ9Il9zZWxmIiBocmVmPSIvL2UubWFpbC5ydS9jZ2ktYmluLyI+
+Cgk8L2Rpdj4KPC9kaXY+CgoKCjwvZGl2PjwvYmxvY2txdW90ZT48YnI+PC9CT0RZPjwvSFRNTD4K
+
+----ALT--Uq9MQHC21327651319--
+
