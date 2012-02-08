@@ -165,17 +165,21 @@ class EmailReplyParser
       return true if line =~ /^On.*wrote:$/
 
       #gmail (russian)
+      #<icfdev.ru@gmail.com>написал:
       return true if line =~ /^<.*@.*>написал:/
+      #27 января 2012 г. 12:01 пользователь Артур Пжков
       return true if line =~ /^[0-9]{2} .* [0-9]{4}.*[0-9]{2}:[0-9]{2}/
 
       #mail.ru (russian)
+      #27 января 2012, 12:00 от Артур Пиражков <icfdev.ru@gmail.com>:
       return true if  line =~ /^[0-9]{2} .* [0-9]{4}, [0-9]{2}:[0-9]{2} от .* <.*@.*>/
 
-
       #thunderbird (russian)
+      #27.01.2012 12:00, Артур Пиражков пишет:
       return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4} [0-9]{2}:[0-9]{2}, .* пишет:/
 
       #yandex (russian)
+      #27.01.2012, 12:00, "Артур Пиражков" <icfdev.ru@gmail.com>:
       return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4}, [0-9]{2}:[0-9]{2}, .* <.*@.*>:/
 
       return false
