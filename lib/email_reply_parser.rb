@@ -167,7 +167,8 @@ class EmailReplyParser
 
       # Regexp includes
       #
-      date1 = '[0-9\.\- :,]+'
+      s = '[\.\-\/]' # date separators
+      date1 = "\\d+#{s}\\d+#{s}\\d+"
       date2 = '\d+\s\D+\s\d+(\s+г.)?'
       dates = "(#{date1}|#{date2})"
       time = '\d{2}:\d{2}'
@@ -182,10 +183,20 @@ class EmailReplyParser
       return true if line =~ /^#{email}написал:$/
       return true if line =~ /^#{date_time}\sпользователь\s.+$/i
 
+
+      # TODO Незнаю пока что с этим делать, это письмо лежит в gmail_2
+      # похоже нужно как-то обрабатывать сразу две строки
+      #
+      #                  2 февраля 2012 г. 8:58 пользователь Инвесткафе (комментарии) <
+      #                  reply@investcafe.ru> написал:
+
       # mail.ru          27 января 2012, 12:00 от Артур Пиражков <icfdev.ru@gmail.com>:
       # thunderbird      27.01.2012 12:00, Артур Пиражков пишет:
       # yandex           27.01.2012, 12:00, "Артур Пиражков" <icfdev.ru@gmail.com>:
       return true if line =~ /^#{date_time}(,| от)\s+.+(пишет|#{email}):$/i
+
+      # unknown          2012/2/1 Инвесткафе (комментарии) <reply@investcafe.ru>
+      return true if line =~ /^#{date1}\s+.+\s+#{email}$/i
 
       return false
      end
