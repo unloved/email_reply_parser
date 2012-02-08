@@ -161,23 +161,24 @@ class EmailReplyParser
     #
     # Returns true if the line is a valid header, or false.
     def quote_header?(line)
-      result = false
-      result = line =~ /^:etorw.*nO$/ unless result
+      line=line.reverse
+      return true if line =~ /^On.*wrote:$/
 
       #gmail (russian)
-      result = line =~ /^:ласипан>.*@.*</ unless result
-      result = line =~ /^*[0-9]{2}:[0-9]{2}.*[0-9]{4} .* [0-9]{2}/ unless result
+      return true if line =~ /^<.*@.*>написал:/
+      return true if line =~ /^[0-9]{2} .* [0-9]{4}.*[0-9]{2}:[0-9]{2}/
 
       #mail.ru (russian)
-      result = line =~ /^>.*@.*< .* то [0-9]{2}:[0-9]{2} ,[0-9]{4} .* [0-9]{2}/ unless result
+      return true if  line =~ /^[0-9]{2} .* [0-9]{4}, [0-9]{2}:[0-9]{2} от .* <.*@.*>/
+
 
       #thunderbird (russian)
-      result = line =~ /^:тешип .* ,[0-9]{2}:[0-9]{2} [0-9]{4}.[0-9]{2}.[0-9]{2}/ unless result
+      return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4} [0-9]{2}:[0-9]{2}, .* пишет:/
 
       #yandex (russian)
-      result = line =~ /:>.*@.*< .* ,[0-9]{2}:[0-9]{2} ,[0-9]{4}.[0-9]{2}.[0-9]{2}/ unless result
+      return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4}, [0-9]{2}:[0-9]{2}, .* <.*@.*>:/
 
-      result
+      return false
      end
 
     # Builds the fragment string and reverses it, after all lines have been
