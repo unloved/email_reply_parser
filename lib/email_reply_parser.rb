@@ -43,7 +43,7 @@ class EmailReplyParser
   end
 
   def self.parse(mail)
-    body_from = mail.text_part|| mail
+    body_from = mail.text_part || mail
     Email.new.read(body_from.body.to_s.force_encoding(body_from.charset).encode('utf-8'))
   end
 
