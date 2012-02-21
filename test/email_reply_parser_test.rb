@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'rubygems'
 require 'test/unit'
 require 'pathname'
@@ -78,16 +80,18 @@ I am currently using the Java HTTP API.\n", reply.fragments[0].to_s
     assert_equal "The Quick Brown Fox Jumps Over The Lazy Dog", original
   end
 
-  def test_custom_email_clients
-    email_clients=['gmail', 'mailru', 'thunderbird', 'yandex' ]
-    email_clients.each do |client|
+  email_clients = ['gmail', 'mailru', 'thunderbird', 'yandex', 'unknown_1']
+  email_replies = {'unknown_1'=>'test2', 'gmail_2'=>'Евросоюз просто не в теме )' }
+
+  email_clients.each do |client|
+    define_method "test_#{client}_client" do
       mail = Mail.new(IO.read EMAIL_FIXTURE_PATH.join("email_#{client}.txt"))
       parser = EmailReplyParser.parse(mail)
-      assert parser.fragments.count > 1
+      reply =  email_replies[client] || 'test answer'
+      assert_equal reply, parser.get_reply
+      assert_operator parser.fragments.count, :>, 1
       assert_equal 1, parser.fragments.find_all{|f| !f.hidden? and !f.signature? and !f.quoted?}.count
-      assert_equal 'test answer', parser.get_reply
     end
-
   end
 
   def email(name)

@@ -43,7 +43,7 @@ class EmailReplyParser
   end
 
   def self.parse(mail)
-    body_from = mail.text_part|| mail
+    body_from = mail.text_part || mail
     Email.new.read(body_from.body.to_s.force_encoding(body_from.charset).encode('utf-8'))
   end
 
@@ -161,34 +161,49 @@ class EmailReplyParser
     #
     # Returns true if the line is a valid header, or false.
     def quote_header?(line)
-      line=line.reverse
+      line = line.reverse
       return true if line =~ /^On.*wrote:$/
 
-      #gmail (russian)
-      #<icfdev.ru@gmail.com>написал:
-      return true if line =~ /^<.*@.*>написал:/
-      #27 января 2012 г. 12:01 пользователь Артур Пжков
-      return true if line =~ /^[0-9]{2} .* [0-9]{4}.*[0-9]{2}:[0-9]{2}/
 
-      #mail.ru (russian)
-      #27 января 2012, 12:00 от Артур Пиражков <icfdev.ru@gmail.com>:
-      return true if  line =~ /^[0-9]{2} .* [0-9]{4}, [0-9]{2}:[0-9]{2} от .* <.*@.*>/
+      # Regexp includes
+      #
+      s = '[\.\-\/]' # date separators
+      date1 = "\\d+#{s}\\d+#{s}\\d+"
+      date2 = '\d+\s\D+\s\d+(\s+г.)?'
+      dates = "(#{date1}|#{date2})"
+      time = '\d{2}:\d{2}'
+      date_time = "#{dates},?\s#{time}"
+      email = '<\S+@\S+\.\S+>'
 
-      #thunderbird (russian)
-      #27.01.2012 12:00, Артур Пиражков пишет:
-      return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4} [0-9]{2}:[0-9]{2}, .* пишет:/
 
-      #yandex (russian)
-      #27.01.2012, 12:00, "Артур Пиражков" <icfdev.ru@gmail.com>:
-      return true if line =~ /^[0-9]{2}.[0-9]{2}.[0-9]{4}, [0-9]{2}:[0-9]{2}, .* <.*@.*>:/
+      # Russian emails
+      #
+      # gmail            <icfdev.ru@gmail.com>написал:
+      #                  27 января 2012 г. 12:01 пользователь Артур Пжков
+      return true if line =~ /^#{email}написал:$/
+      return true if line =~ /^#{date_time}\sпользователь\s.+$/i
+
+
+      # TODO Незнаю пока что с этим делать, это письмо лежит в gmail_2
+      # похоже нужно как-то обрабатывать сразу две строки
+      #
+      #                  2 февраля 2012 г. 8:58 пользователь Инвесткафе (комментарии) <
+      #                  reply@investcafe.ru> написал:
+
+      # mail.ru          27 января 2012, 12:00 от Артур Пиражков <icfdev.ru@gmail.com>:
+      # thunderbird      27.01.2012 12:00, Артур Пиражков пишет:
+      # yandex           27.01.2012, 12:00, "Артур Пиражков" <icfdev.ru@gmail.com>:
+      return true if line =~ /^#{date_time}(,| от)\s+.+(пишет|#{email}):$/i
+
+      # unknown          2012/2/1 Инвесткафе (комментарии) <reply@investcafe.ru>
+      return true if line =~ /^#{date1}\s+.+\s+#{email}$/i
 
       return false
      end
 
     # Builds the fragment string and reverses it, after all lines have been
     # added.  It also checks to see if this Fragment is hidden.  The hidden
-    # Fragment check reads from the bottom to the top.
-    #
+    # Fragment check reads from the bottom to the top.  #
     # Any quoted Fragments or signature Fragments are marked hidden if they
     # are below any visible Fragments.  Visible Fragments are expected to
     # contain original content by the author.  If they are below a quoted
