@@ -44,7 +44,13 @@ class EmailReplyParser
 
   def self.parse(mail)
     body_from = mail.text_part || mail
-    Email.new.read(body_from.body.to_s.force_encoding(body_from.charset).encode('utf-8'))
+    text=''
+    begin
+      text = body_from.body.to_s.encode('utf-8',body_from.charset)
+    rescue Encoding::ConverterNotFoundError
+      text = body_from.body.to_s
+    end
+    Email.new.read(text)
   end
 
   ### Emails
